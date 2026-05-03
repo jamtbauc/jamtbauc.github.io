@@ -1,18 +1,372 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Portfolio - James T. Baucum</title>
-        <meta name="keywords" content="James T. Baucum, James Baucum, JT Baucum, portfolio">
-        <meta name="author" content="James Baucum">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio - James T. Baucum</title>
+    <meta name="keywords" content="James T. Baucum, James Baucum, JT Baucum, portfolio" />
+    <meta name="author" content="James Baucum" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['"DM Serif Display"', 'serif'],
+              sans: ['"DM Sans"', 'sans-serif'],
+            },
+            colors: {
+              navy: {
+                50:  '#f0f4fa',
+                100: '#d9e4f5',
+                200: '#b3c9eb',
+                300: '#7aa0d4',
+                400: '#4a78ba',
+                500: '#2d5a9e',
+                600: '#1e3f72',
+                700: '#152d52',
+                800: '#0e1f38',
+                900: '#091528',
+              },
+              gold: {
+                400: '#d4a843',
+                500: '#b8912e',
+                600: '#9c7a1a',
+              }
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-slate-50 text-slate-800 font-sans antialiased">
 
-    </head>
-    <body>
-        <nav></nav>
-        <main></main>
-        <script src="scripts.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    </body>
+    <!-- NAV -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="#" class="font-display text-xl text-white tracking-wide">JT Baucum</a>
+        <ul class="hidden md:flex gap-8 text-sm font-medium text-white/80">
+          <li><a href="#about"      class="nav-link hover:text-white transition-colors">About</a></li>
+          <li><a href="#skills"     class="nav-link hover:text-white transition-colors">Skills</a></li>
+          <li><a href="#projects"   class="nav-link hover:text-white transition-colors">Projects</a></li>
+          <li><a href="#experience" class="nav-link hover:text-white transition-colors">Experience</a></li>
+          <li><a href="#contact"    class="nav-link hover:text-white transition-colors">Contact</a></li>
+        </ul>
+        <!-- Mobile hamburger -->
+        <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-navy-800 px-6 pb-4">
+        <ul class="flex flex-col gap-3 text-sm font-medium text-white/80">
+          <li><a href="#about"      class="mobile-link block py-1 hover:text-white">About</a></li>
+          <li><a href="#skills"     class="mobile-link block py-1 hover:text-white">Skills</a></li>
+          <li><a href="#projects"   class="mobile-link block py-1 hover:text-white">Projects</a></li>
+          <li><a href="#experience" class="mobile-link block py-1 hover:text-white">Experience</a></li>
+          <li><a href="#contact"    class="mobile-link block py-1 hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="relative min-h-screen flex items-center bg-navy-800 overflow-hidden">
+      <div class="hero-grid-overlay absolute inset-0 opacity-10"></div>
+      <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-navy-500 rounded-full blur-[120px] opacity-20 -translate-y-1/2 translate-x-1/3"></div>
+      <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold-400 rounded-full blur-[100px] opacity-10 translate-y-1/2 -translate-x-1/3"></div>
+
+      <div class="relative z-10 max-w-6xl mx-auto px-6 py-32">
+        <p class="text-gold-400 text-sm font-medium tracking-widest uppercase mb-4 fade-in" style="animation-delay:0.1s">Senior Software Engineer</p>
+        <h1 class="font-display text-5xl md:text-7xl text-white leading-tight mb-6 fade-in" style="animation-delay:0.2s">
+          James T.<br /><span class="italic text-navy-200">Baucum</span>
+        </h1>
+        <p class="text-navy-200 text-lg md:text-xl max-w-xl leading-relaxed mb-10 fade-in" style="animation-delay:0.3s">
+          Senior Software Engineer with 4+ years of experience architecting full-stack applications with Angular and Spring Boot — focused on clean design, cloud-native delivery, and scalable systems.
+        </p>
+        <div class="flex gap-4 flex-wrap fade-in" style="animation-delay:0.4s">
+          <a href="#projects" class="btn-primary">View Projects</a>
+          <a href="#contact"  class="btn-ghost">Get in Touch</a>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40 text-xs tracking-widest animate-bounce">
+        <span>SCROLL</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- ABOUT -->
+      <section id="about" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+          <div class="reveal">
+            <span class="section-label">About Me</span>
+            <h2 class="section-title">Passionate about building things that matter.</h2>
+            <p class="text-slate-600 leading-relaxed mb-4">
+              I'm a Senior Software Engineer based in the greater Memphis area, specializing in full-stack development with Angular and Spring Boot. I've served as a technical SME and go-to architect — driving system design, shaping data models, and leading cross-functional knowledge transfers.
+            </p>
+            <p class="text-slate-600 leading-relaxed mb-8">
+              I thrive on translating complex business processes into scalable, maintainable systems and am equally comfortable working autonomously or mentoring junior engineers toward delivery. I hold a B.S. in Computer Science with a concentration in Artificial Intelligence from the University of Memphis.
+            </p>
+            <a href="#contact" class="btn-primary-dark">Let's Connect</a>
+          </div>
+          <div class="reveal grid grid-cols-2 gap-4">
+            <div class="stat-card">
+              <span class="stat-number">4+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">60%</span>
+              <span class="stat-label">Audit Time Reduced</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">15+</span>
+              <span class="stat-label">Technologies</span>
+            </div>
+            <div class="stat-card bg-navy-800 text-white">
+              <span class="stat-number text-gold-400">∞</span>
+              <span class="stat-label text-navy-200">Problems Solved</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="py-24 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="text-center mb-16 reveal">
+            <span class="section-label">What I Work With</span>
+            <h2 class="section-title mx-auto">Skills & Technologies</h2>
+          </div>
+          <div class="grid md:grid-cols-3 gap-8">
+
+            <div class="skill-card reveal">
+              <div class="skill-icon bg-blue-50 text-blue-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"/></svg>
+              </div>
+              <h3 class="font-display text-lg text-navy-800 mb-2">Backend</h3>
+              <ul class="text-slate-500 text-sm space-y-1">
+                <li>Java / Spring Boot</li>
+                <li>RESTful API Design</li>
+                <li>PostgreSQL</li>
+                <li>Express.js</li>
+              </ul>
+            </div>
+
+            <div class="skill-card reveal">
+              <div class="skill-icon bg-emerald-50 text-emerald-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <h3 class="font-display text-lg text-navy-800 mb-2">Frontend</h3>
+              <ul class="text-slate-500 text-sm space-y-1">
+                <li>Angular / TypeScript</li>
+                <li>JavaScript</li>
+                <li>HTML5 / CSS3</li>
+                <li>Python / C / C#</li>
+              </ul>
+            </div>
+
+            <div class="skill-card reveal">
+              <div class="skill-icon bg-amber-50 text-amber-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <h3 class="font-display text-lg text-navy-800 mb-2">Cloud & DevOps</h3>
+              <ul class="text-slate-500 text-sm space-y-1">
+                <li>Docker / Kubernetes / OpenShift</li>
+                <li>GitLab CI/CD</li>
+                <li>Helm / Podman</li>
+                <li>Jira / Visual VM</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="text-center mb-16 reveal">
+            <span class="section-label">Portfolio</span>
+            <h2 class="section-title mx-auto">Featured Projects</h2>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="project-card reveal">
+              <div class="project-thumb bg-navy-800">
+                <span class="text-4xl">🛠</span>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="tag">Spring Boot</span>
+                  <span class="tag">Kafka</span>
+                  <span class="tag">PostgreSQL</span>
+                </div>
+                <h3 class="font-display text-lg text-navy-800 mb-2">ADIP (Automated Document Ingestion Process)</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-4">A back-end service that connects to Microsoft Azure and syncs rail interchanges to associated customer orders.</p>
+                <!-- <div class="flex gap-3">
+                  <a href="#" class="text-navy-600 text-sm font-medium hover:text-navy-800 transition-colors">View Demo →</a>
+                  <a href="#" class="text-slate-400 text-sm font-medium hover:text-slate-600 transition-colors">GitHub</a>
+                </div> -->
+              </div>
+            </div>
+
+            <div class="project-card reveal">
+              <div class="project-thumb bg-slate-700">
+                <span class="text-4xl">📊</span>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="tag">Spring Boot</span>
+                  <span class="tag">Kafka</span>
+                  <span class="tag">PostgreSQL</span>
+                </div>
+                <h3 class="font-display text-lg text-navy-800 mb-2">Geofence Breadcrumb Processing</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-4">A system of kafka consumers and RESTful APIs that process breadcrumbs and determine geofence breaches.</p>
+                <!-- <div class="flex gap-3">
+                  <a href="#" class="text-navy-600 text-sm font-medium hover:text-navy-800 transition-colors">View Demo →</a>
+                  <a href="#" class="text-slate-400 text-sm font-medium hover:text-slate-600 transition-colors">GitHub</a>
+                </div> -->
+              </div>
+            </div>
+
+            <div class="project-card reveal">
+              <div class="project-thumb bg-gold-500">
+                <span class="text-4xl">🚀</span>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="tag">Spring Boot</span>
+                  <span class="tag">PostgreSQL</span>
+                  <span class="tag">OpenShift</span>
+                </div>
+                <h3 class="font-display text-lg text-navy-800 mb-2">Driver Dwell</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-4">A system that creates driver pay records from detected geofence breaches.</p>
+                <!-- <div class="flex gap-3">
+                  <a href="#" class="text-navy-600 text-sm font-medium hover:text-navy-800 transition-colors">View Demo →</a>
+                  <a href="#" class="text-slate-400 text-sm font-medium hover:text-slate-600 transition-colors">GitHub</a>
+                </div> -->
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="py-24 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="text-center mb-16 reveal">
+            <span class="section-label">Career</span>
+            <h2 class="section-title mx-auto">Work Experience</h2>
+          </div>
+          <div class="max-w-3xl mx-auto space-y-6">
+
+            <div class="timeline-item reveal">
+              <div class="timeline-dot"></div>
+              <div class="timeline-body">
+                <div class="flex flex-wrap items-start justify-between gap-2 mb-1">
+                  <h3 class="font-display text-lg text-navy-800">Senior Programmer Analyst</h3>
+                  <span class="text-sm text-slate-400 whitespace-nowrap">Apr 2026 – Present</span>
+                </div>
+                <p class="text-gold-500 text-sm font-medium mb-3">IMC Logistics · Collierville, TN</p>
+                <ul class="text-slate-500 text-sm leading-relaxed list-disc list-inside space-y-1">
+                  <li>Led end-to-end system design for a greenfield initiative — defining service boundaries, data relationships, and API contracts.</li>
+                  <li>Partnered with product owners to translate ambiguous business processes into concrete technical designs, reducing iteration cycles and preventing downstream rework.</li>
+                  <li>Contributed to early-stage architectural decisions shaping patterns adopted across the broader engineering org.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item reveal">
+              <div class="timeline-dot"></div>
+              <div class="timeline-body">
+                <div class="flex flex-wrap items-start justify-between gap-2 mb-1">
+                  <h3 class="font-display text-lg text-navy-800">Programmer Analyst</h3>
+                  <span class="text-sm text-slate-400 whitespace-nowrap">Mar 2023 – Mar 2026</span>
+                </div>
+                <p class="text-gold-500 text-sm font-medium mb-3">IMC Logistics · Collierville, TN</p>
+                <ul class="text-slate-500 text-sm leading-relaxed list-disc list-inside space-y-1">
+                  <li>Designed and owned a full-stack audit processing app (Angular + Spring Boot) that cut manual processing time by over 60%.</li>
+                  <li>Served as technical SME — created documentation, led knowledge transfers, and reduced engineer onboarding time from weeks to days.</li>
+                  <li>Optimized Spring Boot microservices for Kubernetes/OpenShift via GitLab CI/CD, improving container startup time, memory footprint, and P95 API latency.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item reveal">
+              <div class="timeline-dot"></div>
+              <div class="timeline-body">
+                <div class="flex flex-wrap items-start justify-between gap-2 mb-1">
+                  <h3 class="font-display text-lg text-navy-800">Associate Programmer Analyst</h3>
+                  <span class="text-sm text-slate-400 whitespace-nowrap">Sep 2022 – Mar 2023</span>
+                </div>
+                <p class="text-gold-500 text-sm font-medium mb-3">TEKsystems · Memphis, TN</p>
+                <ul class="text-slate-500 text-sm leading-relaxed list-disc list-inside space-y-1">
+                  <li>Maintained and enhanced internal Angular/Express.js applications, resolving Jira-escalated bugs and delivering UX improvements.</li>
+                  <li>Designed an automated email parsing system integrated with dispatching infrastructure, eliminating manual document scanning for drivers.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item reveal">
+              <div class="timeline-dot"></div>
+              <div class="timeline-body">
+                <div class="flex flex-wrap items-start justify-between gap-2 mb-1">
+                  <h3 class="font-display text-lg text-navy-800">IT Data Specialist</h3>
+                  <span class="text-sm text-slate-400 whitespace-nowrap">Aug 2016 – Sep 2018</span>
+                </div>
+                <p class="text-gold-500 text-sm font-medium mb-3">Revel Enterprises · Paris, TN</p>
+                <ul class="text-slate-500 text-sm leading-relaxed list-disc list-inside space-y-1">
+                  <li>Wrote and optimized complex SQL queries to surface business-critical data for engineering and operations stakeholders.</li>
+                  <li>Improved data accuracy, availability, and performance across raw data systems.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="py-24 bg-navy-800 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 hero-grid-overlay"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-gold-400 rounded-full blur-[120px] opacity-10"></div>
+        <div class="relative z-10 max-w-2xl mx-auto px-6 text-center reveal">
+          <span class="section-label text-navy-300">Contact</span>
+          <h2 class="font-display text-4xl md:text-5xl text-white mb-6">Let's work together.</h2>
+          <p class="text-navy-200 leading-relaxed mb-10">I'm open to new opportunities, collaborations, and interesting conversations. Feel free to reach out.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="mailto:jamestbauc@gmail.com" class="btn-primary">
+              Email Me
+            </a>
+            <a href="https://linkedin.com/in/jamesbaucum/" target="_blank" class="btn-ghost">
+              LinkedIn
+            </a>
+            <a href="https://github.com/jamtbauc" target="_blank" class="btn-ghost">
+              GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-900 py-6 text-center text-navy-400 text-sm">
+      <p>© 2026 James T. Baucum · Built with care</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+  </body>
 </html>
